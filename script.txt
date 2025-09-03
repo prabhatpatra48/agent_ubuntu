@@ -1,0 +1,12 @@
+[Unit] 
+Description=AYUDH System Monitoring Agent 
+After=network.target 
+[Service] 
+ExecStart=/usr/local/bin/systemmonitor_linux 
+Restart=always 
+User=socadmin  
+WorkingDirectory=/home/socadmin/ 
+StandardOutput=append:/var/log/ayudh_sysmon_agent.log 
+StandardError=append:/var/log/ayudh_sysmon_agent.err.log 
+[Install] 
+WantedBy=multi-user.target
